@@ -1,0 +1,41 @@
+.nav-list {
+  display: flex;
+  margin: 0;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.nav {
+  border-bottom: 2px;
+  border-style: solid;
+}
+
+.left-sidebar {
+  position: fixed;
+  width: 2rem;
+  min-height: 100%;
+  background-color: #334b35;
+}
+
+.vertical-banner {
+  position: fixed; /* Keep the banner fixed within the viewport */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0; /* Position it at the left side of the viewport */
+  width: 30px; /* Adjust the width of the banner */
+  height: 100vh; /* Make the banner cover the full viewport height */
+  background-color: #334b35; /* Set the background color of the banner */
+}
+
+.vertical-banner::after {
+  display: flex;
+  content: "";
+  position: relative;
+  margin-left: 6px;
+  margin-top: 12px;
+
+  width: 17px;
+  height: 17px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+}

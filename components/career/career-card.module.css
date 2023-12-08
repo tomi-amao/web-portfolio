@@ -1,0 +1,79 @@
+.career-container {
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.3fr;
+  grid-template-columns: 1fr;
+
+  gap: 0.1rem;
+  border: 2px solid #334b35;
+  border-radius: 10px;
+  background-color: #fefefb;
+  box-shadow: 20%;
+}
+
+.career-title {
+  display: flex;
+
+  padding: 0.5rem;
+}
+
+.career-title p {
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.career-desc {
+  display: flex;
+  position: relative;
+  align-self: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.career-desc ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  justify-content: space-evenly;
+}
+
+.career-desc li {
+  /* border-style: solid; */
+  list-style: circle;
+  margin-left: 0.8rem;
+}
+
+.career-desc p {
+  display: block;
+  font-size: 0.8rem;
+}
+
+.career-skills ul {
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: space-evenly;
+}
+
+.career-skills {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.career-skills::after {
+  content: "";
+  position: absolute;
+  top: -2px; /* Adjust this value to control the length of the shortened border */
+  left: 50%; /* Position the pseudo-element in the middle */
+  transform: translateX(-50%); /* Center the pseudo-element horizontally */
+  width: 75%; /* Adjust this value to control the length of the shortened border */
+  border-top: 2px solid #f25c33; /* Shortened bottom border */
+}
+
+.career-desc::after {
+  content: "";
+  position: absolute;
+  top: -2px; /* Adjust this value to control the length of the shortened border */
+  left: 50%; /* Position the pseudo-element in the middle */
+  transform: translateX(-50%); /* Center the pseudo-element horizontally */
+  width: 75%; /* Adjust this value to control the length of the shortened border */
+  border-top: 2px solid #f25c33; /* Shortened bottom border */
+}

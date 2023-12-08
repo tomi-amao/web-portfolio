@@ -1,0 +1,95 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    auto
+  ); /* Use 'auto' for variable column widths */
+  grid-template-rows: repeat(5, auto); /* Use 'auto' for variable row heights */
+  align-items: center;
+  justify-items: center; /* Center items along the x-axis */
+  height: 100vh;
+  gap: 0.5rem;
+}
+
+.grid-item {
+  display: flex;
+  position: relative;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.grid-item-image {
+  display: flex;
+  justify-self: flex-end;
+  font-size: 18px;
+  grid-row: 1/3;
+}
+
+.grid-item-image-border {
+  position: relative;
+  border: 2px solid #334b35;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.right-arrow {
+  position: relative;
+  left: 10px;
+  bottom: 30px;
+}
+
+.bottom-corner-arrow {
+  position: relative;
+  left: 100%;
+  top: 3rem;
+}
+
+.image-container {
+  display: inline-block;
+  padding: 10px; /* Adjust the padding to control the offset */
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2); /* Set the shadow to create the offset effect */
+  outline: 2px solid #fff; /* Set the outline to create the inner border */
+}
+
+.grid-item-desc {
+  display: flex;
+  justify-self: flex-start;
+
+  font-size: 18px;
+  grid-row: 2/4;
+  grid-column: 2;
+  width: 30rem;
+  border: 2px solid #334b35;
+  background-color: #fefefb;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1); /* Set your shadow values here */
+  padding: 0.5rem;
+  justify-content: center;
+}
+
+.grid-item-desc p {
+  padding: 0.5rem;
+}
+
+.grid-item-traits {
+  grid-row: 4;
+  grid-column: span 2;
+}
+.grid-item-traits ul {
+  display: flex;
+  flex-direction: row;
+  grid-row: 4;
+  gap: 3rem;
+}
+
+.grid-item-traits-dot li::after {
+  display: flex;
+  align-self: center;
+  content: "";
+  position: relative;
+  margin-left: 3.1rem;
+  margin-top: 1rem;
+  width: 10px;
+  height: 10px;
+  background-color: #f25c33;
+  border-radius: 50%;
+}
