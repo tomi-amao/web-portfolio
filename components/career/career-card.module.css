@@ -61,19 +61,19 @@
 .career-skills::after {
   content: "";
   position: absolute;
-  top: -2px; /* Adjust this value to control the length of the shortened border */
-  left: 50%; /* Position the pseudo-element in the middle */
-  transform: translateX(-50%); /* Center the pseudo-element horizontally */
-  width: 75%; /* Adjust this value to control the length of the shortened border */
-  border-top: 2px solid #f25c33; /* Shortened bottom border */
+  top: -2px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 75%; 
+  border-top: 2px solid #f25c33; 
 }
 
 .career-desc::after {
   content: "";
   position: absolute;
-  top: -2px; /* Adjust this value to control the length of the shortened border */
-  left: 50%; /* Position the pseudo-element in the middle */
-  transform: translateX(-50%); /* Center the pseudo-element horizontally */
-  width: 75%; /* Adjust this value to control the length of the shortened border */
-  border-top: 2px solid #f25c33; /* Shortened bottom border */
+  top: -2px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 75%; 
+  border-top: 2px solid #f25c33; 
 }
