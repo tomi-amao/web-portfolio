@@ -1,5 +1,3 @@
-import ContactInput from "../ui-elements/contact-input";
-import ContactSubmit from "../ui-elements/contact-submit";
 import classes from "./contact.module.css";
 
 export default function Contact() {
@@ -13,12 +11,10 @@ export default function Contact() {
             appreciated.
           </h3>
         </div>
-        <div className={classes["grid-item-links"]}>
+        <div className={classes["contact-links"]}>
           <ul>
             <li> tomiamaooa@gmail.com</li>
             <li> Github</li>
-          </ul>
-          <ul>
             <li> Medium</li>
             <li> LinkedIn</li>
           </ul>

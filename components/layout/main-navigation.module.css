@@ -7,8 +7,11 @@
 }
 
 .nav {
+  display: flex;
   border-bottom: 2px;
   border-style: solid;
+  width: 100%;
+  justify-content: center;
 }
 
 .left-sidebar {
@@ -19,12 +22,12 @@
 }
 
 .vertical-banner {
-  position: fixed; /* Keep the banner fixed within the viewport */
-  top: 0; /* Position it at the top of the viewport */
-  left: 0; /* Position it at the left side of the viewport */
-  width: 30px; /* Adjust the width of the banner */
-  height: 100vh; /* Make the banner cover the full viewport height */
-  background-color: #334b35; /* Set the background color of the banner */
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 30px; 
+  height: 100%; 
+  background-color: #334b35; 
 }
 
 .vertical-banner::after {

@@ -1,4 +1,3 @@
-import AboutMe from "../about-me/about-me";
 import classes from "./main-navigation.module.css";
 
 export default function MainNavigation() {

@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); 
+  grid-template-rows: repeat(2, auto); 
+  gap: 0.5rem; 
+
+  padding: 2rem;
+  align-items: start;
+  justify-items: center; /* Center items along the x-axis */
+  height: 100vh;
+}
+
+.grid-item {
+  display: flex;
+  position: relative;
+  font-size: 18px;
+}
+
+.grid-item-title {
+  display: flex;
+  position: relative;
+  top: 2rem;
+  font-size: 5rem;
+  line-height: 1;
+}
+
