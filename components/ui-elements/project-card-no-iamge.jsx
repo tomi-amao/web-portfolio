@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react";
 import classes from "./project-card-no-image.module.css";
 
 export default function ProjectCardNoImage() {
@@ -17,9 +20,21 @@ export default function ProjectCardNoImage() {
       />
     </svg>
   );
+  const [projectHover, setProjectHover] = useState(false)
+
+  const projectHoverStyle = {
+    backgroundColor : projectHover ? "#feca0f" : "transparent",
+    boxShadow : projectHover ? "5px 5px 10px #334b35" : "none"
+  }
+
+  const handleSetProjectHover = (status) => {
+    setProjectHover(status)
+  }
+
+
 
   return (
-    <div className={classes["project-container"]}>
+    <div style={projectHoverStyle} className={classes["project-container"]} onMouseOver={() => {handleSetProjectHover(true)}} onMouseOut={() => {handleSetProjectHover(false)}}>
       <div className={classes["project-desc"]}>
         <h1>
           Serverless Resume
