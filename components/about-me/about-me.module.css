@@ -84,12 +84,9 @@
 }
 
 .page-title {
-  grid-column: 1;
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  font-size: 2rem;
-  padding-right: 1em;
+    padding-left: 1.4em;
+    padding-bottom: 3em;
+    font-size: 2.5rem;
 }
 .image-desc {
   padding: 0.5em;
@@ -119,7 +116,50 @@
 }
 
 .trait-large {
+  display: flex;
+  width: 83%;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 1em;
+  margin-top: 1em;
+  margin-left: -1em;
+  margin-bottom: 12em;
+
+}
+
+.trait-large li {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1em;
+  background-color: #fefefb;
+  font-size: 0.8rem;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.trait-large p {
+  padding-left: 1em;
+}
+.trait-large span {
   display: none;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #334b35;
+  border-radius: 50%;
+  margin-left: 20em;
+  margin-top: 0.5em;
+  position: absolute;
+}
+
+.trait-large li:nth-child(5), .trait-large li:nth-child(6), .trait-large li:nth-child(7), .trait-large li:nth-child(8) {
+  text-align: left;
+  font-size: 0.8rem;
+  padding-right: 0.5em;
+  border: 2px solid #334b35;
+  
 }
 
 /* DESKTOP/LAPTOP STYLES */
@@ -185,6 +225,7 @@
     padding-left: 1em;
     margin-top: 1em;
     width: 100%;
+    margin-left: 0;
   }
 
   .trait-large li {
@@ -196,14 +237,14 @@
     text-align: center;
     border-radius: 5px;
     border: 1px solid #334b35;
+    cursor: pointer;
   }
 
   .trait-large p {
     padding-left: 1em;
   }
-
-  .trait-large li::before {
-    display: flex;
+  .trait-large span {
+    display: none;
     content: "";
     width: 10px;
     height: 10px;
@@ -213,8 +254,10 @@
     margin-top: 0.5em;
     position: absolute;
   }
+
+
   
-  .trait-large li:last-child{
+  .trait-large li:nth-child(5), .trait-large li:nth-child(6), .trait-large li:nth-child(7), .trait-large li:nth-child(8) {
     text-align: left;
     margin-top: 4.7em;
     font-size: 1rem;
@@ -222,7 +265,5 @@
     border: 2px solid #334b35;
     
   }
-  .trait-large li:last-child::before {
-    display: none;
-  }
+
 }

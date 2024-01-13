@@ -4,13 +4,19 @@
   grid-template-columns: repeat(1, 300px);
   gap: 0.5rem;
   border-bottom: 2px solid #f25c33;
+  /* background-color: #feca0f  ; */
+  margin-top: -12px;
+  padding: 5px;
+  /* box-shadow: 5px 5px 10px #334b35; */
+  cursor: pointer;
+
 }
 
 .project-image {
   display: flex;
   height: fit-content;
   background-color: #fefefb;
-  border: 1px solid #334b35;
+
 }
 
 .project-desc {

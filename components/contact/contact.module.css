@@ -2,16 +2,13 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr; 
-  grid-template-rows: 0.5fr 1fr 0.2fr; 
-  gap: 0.5rem; 
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr 0.2fr;
+  gap: 0.5rem;
   height: fit-content;
   width: 95%;
   margin-top: 25rem;
 }
-
-
-
 
 .grid-item-info {
   flex-direction: row;
@@ -32,8 +29,6 @@
 .grid-item-info h2 {
   font-size: 4rem;
 }
-
-
 
 /* LINKS */
 
@@ -59,12 +54,10 @@
   background-color: #f25c33;
   color: antiquewhite;
   width: 18em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
-
-
-
-
-
 
 /* FOOTER */
 .footer {
@@ -76,30 +69,26 @@
 .footer::after {
   content: "2024 Tomi Amao";
   position: relative;
-  top: -2px; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  width: 90%; 
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
   border-top: 2px solid #f25c33;
 }
 
-
 /* laptop/desktop layout  */
-
 
 @media screen and (min-width: 1024px) {
   .grid-container {
     display: grid;
-    grid-template-columns: 0.8fr 1fr; 
+    grid-template-columns: 0.8fr 1fr;
     margin-top: 1em;
     width: 100%;
-    gap: 40px
-
+    gap: 40px;
   }
 
   .grid-item-info {
     padding-left: 12em;
-    
   }
 
   .contact-links {
@@ -118,14 +107,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-column: 1;
-
-
   }
 
   .footer {
     grid-column: span 2;
     width: 90%;
   }
-
 }
-
