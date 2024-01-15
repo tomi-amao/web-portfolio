@@ -24,7 +24,7 @@ export default function ProjectCardNoImage() {
 
   const projectHoverStyle = {
     backgroundColor : projectHover ? "#feca0f" : "transparent",
-    boxShadow : projectHover ? "5px 5px 10px #334b35" : "none"
+    boxShadow : projectHover ? "5px 5px 5px #334b35" : "none"
   }
 
   const handleSetProjectHover = (status) => {

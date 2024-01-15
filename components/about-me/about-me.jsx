@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function AboutMe() {
+  // variables holding the content for about-me traits
   const desc =
     " Through my passion for gaming, I have learned to be resilient, adaptable, and open-minded, always seeking new ways to improve and grow. Whether it is learning a new skill, taking on a new project, or facing a difficult challenge, I approach every opportunity with an unwavering dedication to growth and improvement. Success is not just about achieving a specific goal, but about the personal growth and development that comes along the way.";
   const fitness =
@@ -19,6 +20,8 @@ export default function AboutMe() {
   const learner =
     " There isn't a day that goes by that I don't think about how I will improve myself. I am constantly driving forward by being a student to all forms of knowledge.";
 
+  // using boolean state to determine if the trait is displayed or not
+  // all traits are set to not be displayed on first render
   const [allTraits, setAllTraits] = useState({
     fitness: false,
     resilient: false,
@@ -26,6 +29,7 @@ export default function AboutMe() {
     learner: false,
   });
 
+  // all dots against each trait are set to be displayed on first render
   const [dotShow, setDotShow] = useState({
     fitness_dot: true,
     resilient_dot: true,
@@ -33,24 +37,24 @@ export default function AboutMe() {
     learner_dot: true,
   });
 
-  console.log(allTraits.fitness);
-
+  // styling for trait description cards
+  // ternary is used based on the boolean of the respective trait state value
   const fitnessVisibility = {
     display: allTraits.fitness ? "block" : "none",
-    // order: -1
   };
   const resilientVisibility = {
     display: allTraits.resilient ? "block" : "none",
-    // order: -1
   };
   const volunteerVisibility = {
     display: allTraits.volunteer ? "block" : "none",
-    // order: -1
   };
   const learnerVisibility = {
     display: allTraits.learner ? "block" : "none",
-    // order: -1
   };
+
+  // styling for dots against traits
+  // ternary is used based on the boolean of the dot state value
+
   const fitnessDot = {
     display: dotShow.fitness_dot ? "block" : "none",
   };
@@ -65,71 +69,65 @@ export default function AboutMe() {
     display: dotShow.learner_dot ? "block" : "none",
   };
 
+  // handler function toggling the dot for each trait, triggered on mousehover and mouseout
+  // if the associated trait for a dot has been clicked, it will not disappear when mouse is moved away
   const handleSelectionDotHover = (status, trait) => {
     if (trait === "fitness_dot") {
-
       setDotShow((prevValue) => ({
         ...prevValue,
         [trait]: status,
-      }))
+      }));
       if (!status) {
         if (allTraits.fitness) {
           setDotShow((prevValue) => ({
             ...prevValue,
-            [trait]: true
-          }))
+            [trait]: true,
+          }));
         }
       }
-      
     } else if (trait === "resilient_dot") {
       setDotShow((prevValue) => ({
         ...prevValue,
         [trait]: status,
-      }))
+      }));
       if (!status) {
         if (allTraits.resilient) {
           setDotShow((prevValue) => ({
             ...prevValue,
-            [trait]: true
-          }))
+            [trait]: true,
+          }));
         }
       }
-
-      ;
     } else if (trait === "volunteer_dot") {
       setDotShow((prevValue) => ({
         ...prevValue,
         [trait]: status,
-      }))
+      }));
       if (!status) {
         if (allTraits.volunteer) {
           setDotShow((prevValue) => ({
             ...prevValue,
-            [trait]: true
-          }))
+            [trait]: true,
+          }));
         }
       }
-
-      ;
     } else if (trait === "learner_dot") {
       setDotShow((prevValue) => ({
         ...prevValue,
         [trait]: status,
-      }))
+      }));
       if (!status) {
         if (allTraits.learner) {
           setDotShow((prevValue) => ({
             ...prevValue,
-            [trait]: true
-          }))
+            [trait]: true,
+          }));
         }
       }
-
-      ;
     }
   };
 
-
+  // makes all traits falsey when a trait is clicked
   const handleShowAllTraits = (trait) => {
     setAllTraits((prevValue) => ({
       fitness: false,
@@ -138,34 +136,37 @@ export default function AboutMe() {
       learner: false,
     }));
 
+    // makes all dot state values falsey execpt for the clicked trait
     if (trait === "fitness") {
-      setDotShow(prevValue => ({
+      setDotShow((prevValue) => ({
         resilient_dot: false,
         volunteer_dot: false,
         learner_dot: false,
-      }))
+      }));
     }
     if (trait === "resilient") {
-      setDotShow(prevValue => ({
+      setDotShow((prevValue) => ({
         fitness_dot: false,
         volunteer_dot: false,
         learner_dot: false,
-      }))
+      }));
     }
     if (trait === "volunteer") {
-      setDotShow(prevValue => ({
+      setDotShow((prevValue) => ({
         fitness_dot: false,
         resilient_dot: false,
         learner_dot: false,
-      }))
+      }));
     }
     if (trait === "learner") {
-      setDotShow(prevValue => ({
+      setDotShow((prevValue) => ({
         fitness_dot: false,
         resilient_dot: false,
         volunteer_dot: false,
-      }))
+      }));
     }
+
+    // condtion that shows the assocaited trait card when the trait is clicked by making the parsed in trait truthy
 
     setAllTraits((prevValue) => ({
       ...prevValue,
@@ -264,7 +265,6 @@ export default function AboutMe() {
         </div>
       </div>
       <div className={classes["grid-desc"]}></div>
-
     </>
   );
 }
