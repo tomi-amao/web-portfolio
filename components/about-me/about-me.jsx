@@ -6,6 +6,7 @@ import headshot from "../../public/headshot.jpg";
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
   // variables holding the content for about-me traits
@@ -173,9 +174,32 @@ export default function AboutMe() {
       [trait]: !prevValue[trait],
     }));
   };
+
+  const viewScrollAnimations = {
+    whileInView: { opacity: [0, 0.25, 0.5, 0.75, 1], y: 25 },
+    initial: { opacity: 0, y: -15 },
+    transition: { delay: 0, duration: 1, type: "tween" },
+  };
+
+  const traitsContainerAnimations = {
+    whileInView: { opacity: [0, 0.25, 0.5, 0.75, 1], y: 0 },
+    initial: { opacity: 0, y: -15 },
+    transition: { delay: 2, duration: 1, type: "tween" },
+  };
+
   return (
     <>
-      <h1 className={classes["page-title"]}> About Me </h1>
+      <motion.h1
+        className={classes["page-title"]}
+        variants={viewScrollAnimations}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ amount: "all" }}
+        transition="transition"
+      >
+        {" "}
+        About Me{" "}
+      </motion.h1>
 
       <div className={classes["grid-image"]}>
         <div className={classes["container-image"]}>
@@ -191,8 +215,13 @@ export default function AboutMe() {
             </div>
           </div>
         </div>
-        <div className={classes["trait-large"]}>
-          <li
+        <motion.div className={classes["trait-large"]}>
+          <motion.li
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-100px" }}
+            transition="transition"
             onClick={() => {
               handleShowAllTraits("fitness");
             }}
@@ -205,8 +234,13 @@ export default function AboutMe() {
           >
             <span style={fitnessDot}></span>
             <p>fitness advocate</p>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-100px" }}
+            transition="transition"
             onClick={() => {
               handleShowAllTraits("resilient");
             }}
@@ -219,8 +253,13 @@ export default function AboutMe() {
           >
             <span style={resilientDot}></span>
             <p>buoyant beacon</p>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-100px" }}
+            transition="transition"
             onClick={() => {
               handleShowAllTraits("volunteer");
             }}
@@ -234,8 +273,13 @@ export default function AboutMe() {
             <span style={volunteerDot}></span>
 
             <p>vibrant volunteer</p>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-100px" }}
+            transition="transition"
             onClick={() => {
               handleShowAllTraits("learner");
             }}
@@ -249,7 +293,7 @@ export default function AboutMe() {
             <span style={learnerDot}></span>
 
             <p>avid learner</p>
-          </li>
+          </motion.li>
           <li style={fitnessVisibility}>
             <p> {fitness} </p>
           </li>
@@ -262,7 +306,7 @@ export default function AboutMe() {
           <li style={learnerVisibility}>
             <p> {learner} </p>
           </li>
-        </div>
+        </motion.div>
       </div>
       <div className={classes["grid-desc"]}></div>
     </>
