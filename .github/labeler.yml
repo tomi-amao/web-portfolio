@@ -1,0 +1,9 @@
+feature:
+ - head-branch: ['^feature', 'feature']
+patch:
+ - head-branch: ['^patch', 'patch']
+minor:
+ - head-branch: ['^feature', 'feature']
+major:
+ - head-branch: ['^patch', 'patch']
+ 
