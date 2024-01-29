@@ -42,37 +42,37 @@ export default function Hero(props) {
   // retreive the position of the scroll bar and determine which timeline point to show
   useMotionValueEvent(scrollY, "change", (latest) => {
     // first timelinepoint
-    if (latest >= 60) {
+    if (latest >= 166) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point1: true,
       }));
-    } else if (latest < 72) {
+    } else if (latest < 173) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point1: false,
       }));
     }
     // second timeline point
-    if (latest >= 78) {
+    if (latest >= 180) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point2: true,
       }));
-    } else if (latest < 85) {
+    } else if (latest < 188) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point2: false,
       }));
     }
     // third timeline point
-    if (latest >= 91) {
+    if (latest >= 194) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point3: true,
         phrase1: true
       }));
-    } else if (latest < 98) {
+    } else if (latest < 202) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point3: false,
@@ -80,25 +80,25 @@ export default function Hero(props) {
       }));
     }
     // fourth timeline point
-    if (latest >= 102) {
+    if (latest >= 206) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point4: true,
       }));
-    } else if (latest < 112) {
+    } else if (latest < 215) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point4: false,
       }));
     }
     // fifth timeline point
-    if (latest >= 117) {
+    if (latest >= 218) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point5: true,
         phrase2: true
       }));
-    } else if (latest < 134) {
+    } else if (latest < 226) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point5: false,
@@ -106,12 +106,12 @@ export default function Hero(props) {
       }));
     }
     // sixth timeline point
-    if (latest >= 125) {
+    if (latest >= 228) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point6: true,
       }));
-    } else if (latest < 140) {
+    } else if (latest < 236) {
       setTimelinePoint((preValue) => ({
         ...preValue,
         point6: false,
@@ -129,38 +129,40 @@ export default function Hero(props) {
 
   return (
     <>
-      <div className={classes["grid-container"]} ref={ref}>
-        {isWideScreen && <HeroTimeline></HeroTimeline>}
-        <div className={classes["grid-item-info"]}>
-          {isWideScreen && (
-            <motion.h1
+              
+              <motion.h1
               className={classes["title-name"]}
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 60 }}
               transition={{ duration: 2 }}
             >
-              {" "}
-              Hi, I'm Tomi Amao{" "}
+              
+             Hi, I'm Tomi Amao
             </motion.h1>
-          )}
-          {isWideScreen && (
             <motion.h1
               className={classes["title-job"]}
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: -30 }}
               transition={{ duration: 2 }}
             >
-              {" "}
-              A DevOps Engineer{" "}
+              
+              A DevOps Engineer
             </motion.h1>
-          )}
+      <div className={classes["grid-container"]} ref={ref}>
+        {isWideScreen && <HeroTimeline></HeroTimeline>}
+        <div className={classes["grid-item-info"]} >
+
+          
+          
+
+          
           {timelinePoint.phrase1 && (
             <motion.h1 className={classes["title-phrase"]}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 2 }}>
-              {" "}
-              Bridging the Gap{" "}
+              
+              Bridging the Gap
             </motion.h1>
           )}
           {timelinePoint.phrase2 && (
@@ -168,8 +170,8 @@ export default function Hero(props) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 10 }}
             transition={{ duration: 2 }}>
-              {" "}
-              Builing the Flow{" "}
+              
+              Builing the Flow
             </motion.h1>
           )}
 
@@ -191,7 +193,7 @@ export default function Hero(props) {
               animate="visible"
             >
               <h2 className={classes["point1-info"]}>
-                {" "}
+                
                 analysis & infrastructure Design
               </h2>
             </motion.div>
@@ -205,8 +207,8 @@ export default function Hero(props) {
               animate="visible"
             >
               <h2 className={classes["point2-info"]}>
-                {" "}
-                version control & collaboration{" "}
+                
+                version control & collaboration
               </h2>
             </motion.div>
           )}
@@ -219,8 +221,8 @@ export default function Hero(props) {
               animate="visible"
             >
               <h2 className={classes["point1-info"]}>
-                {" "}
-                continuous integration & deployment{" "}
+                
+                continuous integration & deployment
               </h2>
             </motion.div>
           )}
@@ -231,10 +233,10 @@ export default function Hero(props) {
               initial="hidden"
               animate="visible"
             >
-              {" "}
+              
               <h2 className={classes["point2-info"]}>
-                {" "}
-                infrastructure configuration & automation{" "}
+                
+                infrastructure configuration & automation
               </h2>
             </motion.div>
           )}
@@ -246,10 +248,10 @@ export default function Hero(props) {
               initial="hidden"
               animate="visible"
             >
-              {" "}
+              
               <h2 className={classes["point5-info"]}>
-                {" "}
-                monitoring & alerting{" "}
+                
+                monitoring & alerting
               </h2>
             </motion.div>
           )}
@@ -260,15 +262,15 @@ export default function Hero(props) {
               initial="hidden"
               animate="visible"
             >
-              {" "}
+              
               <h2
                 className={classes["point6-info"]}
                 variants={variants}
                 initial="hidden"
                 animate="visible"
               >
-                {" "}
-                security & compliance{" "}
+                
+                security & compliance
               </h2>
             </motion.div>
           )}

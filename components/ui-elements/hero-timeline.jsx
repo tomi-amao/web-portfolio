@@ -31,7 +31,7 @@ export default function HeroTimeline() {
             strokeWidth="3"
             initial={{ opacity: 1, x: -3000 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 7 }}
+            transition={{ duration: 5 }}
           />
       </motion.svg>
     </>
