@@ -3,7 +3,7 @@ feature:
 patch:
  - head-branch: ['^patch', 'patch']
 minor:
- - head-branch: ['^feature', 'feature']
+ - head-branch: ['^minor', 'minor']
 major:
- - head-branch: ['^patch', 'patch']
+ - head-branch: ['^major', 'major']
  
