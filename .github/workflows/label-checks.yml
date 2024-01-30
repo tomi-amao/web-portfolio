@@ -7,7 +7,7 @@
 
 ---
 
-name: pre-merge label checks
+name: pre-merge-label checks
 on: 
   pull_request_target:
     types:
@@ -21,7 +21,7 @@ on:
 
 
 jobs:
-  labeler:
+  auto-labeler:
     permissions:
       contents: read
       pull-requests: write
@@ -30,6 +30,7 @@ jobs:
     - uses: actions/labeler@v5
 
   check_labels:
+    needs: auto-labeler
     name: Check labels
     runs-on: ubuntu-latest
     steps:
@@ -37,7 +38,4 @@ jobs:
         with:
           one_of: major,minor,patch,feature
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-
-
-
 
