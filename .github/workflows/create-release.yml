@@ -1,9 +1,9 @@
-name: Create Release
+name: Release
 
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["pre-merge checks"]
+    workflows: ["Labelling"]
     types:
       - completed
 
