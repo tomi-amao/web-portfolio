@@ -3,26 +3,41 @@ name: Create Release
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["pre-merge-label checks"]
+    workflows: ["pre-merge checks"]
     types:
       - completed
 
 jobs:
-  notify:
+  create-release:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - name: Check for the PR label
+        id: label
+        uses: zwaldowski/match-label-action@v4
+        with:
+          allowed: major,minor,patch
+      - name: Bump the version tag
+        id: next_version
+        uses: zwaldowski/semver-release-action@v3
+        with:
+          bump: ${{ steps.label.outputs.match }}
+          prefix: v
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create release version
-        uses: paulhatch/semantic-version@v5.3.0
-        id: next-version
-        with: 
-          tag_prefix: "v"
-          major_pattern: "(major)"
-          minor_pattern: "(minor)"
       - name: print version to terminal
         run: |
-          echo ${{ steps.next-version.outputs.version }}
+          echo v${{ steps.next_version.outputs.version }}
+      - name: Create release
+        id: create-release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ steps.next_version.outputs.version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+
+        
+
           
           
