@@ -17,9 +17,6 @@ on:
       - labeled
       - unlabeled
 
-
-
-
 jobs:
   auto-labeler:
     permissions:
