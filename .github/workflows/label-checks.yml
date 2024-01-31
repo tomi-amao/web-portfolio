@@ -7,7 +7,7 @@
 
 ---
 
-name: pre-merge checks
+name: Labelling
 on: 
   pull_request_target:
     types:
