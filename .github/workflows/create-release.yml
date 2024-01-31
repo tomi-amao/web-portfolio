@@ -1,11 +1,11 @@
 name: Release
 
 # Only trigger, when the build workflow succeeded
-on:
-  workflow_run:
-    workflows: ["Labelling"]
-    types:
-      - completed
+on: 
+  pull_request:
+    branches:
+      - main
+    types: [closed]
 
 jobs:
   create-release:
@@ -19,6 +19,7 @@ jobs:
         with:
           allowed: major,minor,patch
       - name: Bump the version tag
+        if: github.event.pull_request.merged == true
         id: next_version
         uses: zwaldowski/semver-release-action@v3
         with:
