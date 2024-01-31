@@ -1,6 +1,6 @@
 ## Hi there,
 
-This is my web-portfolio
+This is my web-portfolio.
 
 Built using next.js, it includes a bit about me, my career and the projects I have done.
 
