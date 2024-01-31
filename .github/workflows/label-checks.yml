@@ -34,6 +34,7 @@ jobs:
         # This part is also where you can pass other options, for example:
           prettier_options: --write **/*.{js,md}
           only_changed: True
+          same_commit: True
   auto-labeler:
     needs: prettier-action
     permissions:
