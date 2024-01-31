@@ -30,7 +30,7 @@ jobs:
           only_changed: True
           same_commit: True
   add-label:
-    needs: prettier-action
+    needs: prettify-code
     name: Add Label
     permissions:
       contents: read
