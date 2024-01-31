@@ -21,7 +21,6 @@ jobs:
           tag_prefix: "v"
           major_pattern: "(major)"
           minor_pattern: "(minor)"
-          version_format: "${major}.${minor}.${patch}"
       - name: print version to terminal
         run: |
           echo ${{ steps.next-version.outputs.version }}
