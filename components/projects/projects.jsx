@@ -1,13 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import ProjectCardNoImage from "../ui-elements/project-card-no-iamge";
 import classes from "./projects.module.css";
 import { motion } from "framer-motion";
-import calcScreenSize from "@/utilities/calc-screensize";
 
 export default function Projects() {
-
   const viewScrollAnimations = {
     whileInView: { opacity: [0, 0.5, 1], y: 25 },
     initial: { opacity: 0, y: -15 },
@@ -48,7 +45,7 @@ export default function Projects() {
           variants={projectsAnimationContainer}
           initial="initial"
           whileInView="whileInView"
-          viewport={{ amount: "some", margin: "-400px" }}
+          viewport={{ amount: "some", margin: "-100px" }}
           transition="transition"
           animate="show"
         >

@@ -139,7 +139,7 @@ export default function Career() {
           variants={viewScrollAnimations}
           initial="initial"
           whileInView="whileInView"
-          viewport={{ amount: "all", once: true }}
+          viewport={{ amount: "all"}}
           transition="transition"
         >
           Career & Education
