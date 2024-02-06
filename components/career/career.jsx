@@ -3,8 +3,20 @@
 import classes from "./career.module.css";
 import CareerCard from "./career-card";
 import { useState } from "react";
+import {
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
+import calcScreenSize from "@/utilities/calc-screensize";
 
 export default function Career() {
+  const [isWideScreen, SetIsWideScreen] = useState(false);
+  calcScreenSize(SetIsWideScreen);
+
+  const { scrollY } = useScroll();
+
   //state to hold the boolean value of each career timeline point
   // determines whether to show career card
   const [showcard, setShowCard] = useState({
@@ -58,6 +70,51 @@ export default function Career() {
     }
   };
 
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    //depening on screen size, use different scroll position values
+    if (isWideScreen) {
+      if (latest > 2780) {
+        setShowCard((preValue) => ({
+          ...preValue,
+          point1: true,
+        }));
+      }
+      if (latest > 2880) {
+        setShowCard((preValue) => ({
+          ...preValue,
+          point2: true,
+        }));
+      }
+      if (latest > 2980) {
+        setShowCard((preValue) => ({
+          ...preValue,
+          point3: true,
+        }));
+      }
+    } else if (!isWideScreen) {
+      if (latest > 3700) {
+        setShowCard((preValue) => ({
+          ...preValue,
+          point1: true,
+        }));
+      }
+      if (latest > 4250) {
+        setShowCard((preValue) => ({
+          ...preValue,
+          point2: true,
+        }));
+      }
+      if (latest > 4750) {
+        setShowCard((preValue) => ({
+          ...preValue,
+          point3: true,
+        }));
+      }
+
+      console.log("Page scroll: ", latest);
+    }
+  });
+
   // styles to show the respecive career card, using ternary that determining truthy and falsey values
   const showCardStyle1 = {
     display: showcard.point1 ? "block" : "none",
@@ -69,10 +126,24 @@ export default function Career() {
     display: showcard.point3 ? "block" : "none",
   };
 
+  const viewScrollAnimations = {
+    whileInView: { opacity: [0, 0.5, 1], y: 25 },
+    initial: { opacity: 0, y: -15 },
+    transition: { delay: 0, duration: 1, type: "tween" },
+  };
+
   return (
     <>
       <div className={classes["page-title"]}>
-        <h1>Career & Education</h1>
+        <motion.h1
+          variants={viewScrollAnimations}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ amount: "all", once: true }}
+          transition="transition"
+        >
+          Career & Education
+        </motion.h1>
       </div>
       <div className={classes["grid-container"]}>
         <div className={classes["grid-container-left"]}>
@@ -90,9 +161,17 @@ export default function Career() {
             >
               <div className={classes["pointdesc-career"]}>
                 <p className={classes["career-x"]}> Technology Teacher</p>
-                <div className={classes["card-1"]} style={showCardStyle1}>
-                  <CareerCard />
-                </div>
+                {showcard.point1 && (
+                  <motion.div
+                    className={classes["card-1"]}
+                    style={showCardStyle1}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 10 }}
+                    transition={{ delay: 0, duration: 1.2, type: "tween" }}
+                  >
+                    <CareerCard />
+                  </motion.div>
+                )}
               </div>
             </div>
             <div className={classes["timeline-point-3"]}>
@@ -115,9 +194,17 @@ export default function Career() {
             >
               <div className={classes["pointdesc-career"]}>
                 <p className={classes["career-x-2"]}> Cloud Engineer</p>
-                <div className={classes["card-1"]} style={showCardStyle2}>
-                  <CareerCard />
-                </div>
+                {showcard.point2 && (
+                  <motion.div
+                    className={classes["card-1"]}
+                    style={showCardStyle2}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 10 }}
+                    transition={{ delay: 0, duration: 1.2, type: "tween" }}
+                  >
+                    <CareerCard />
+                  </motion.div>
+                )}
               </div>
             </div>
             <div className={classes["timeline-point-6"]}>
@@ -136,9 +223,17 @@ export default function Career() {
             >
               <div className={classes["pointdesc-career"]}>
                 <p className={classes["career-x-2"]}> DevOps Engineer </p>
-                <div className={classes["card-1"]} style={showCardStyle3}>
-                  <CareerCard />
-                </div>
+                {showcard.point3 && (
+                  <motion.div
+                    className={classes["card-1"]}
+                    style={showCardStyle3}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 10 }}
+                    transition={{ delay: 0, duration: 1.2, type: "tween" }}
+                  >
+                    <CareerCard />
+                  </motion.div>
+                )}
               </div>
             </div>
             <div className={classes["timeline-point-8"]}> </div>

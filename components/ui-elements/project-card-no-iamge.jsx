@@ -1,7 +1,9 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import classes from "./project-card-no-image.module.css";
+import { motion } from "framer-motion";
+
 
 export default function ProjectCardNoImage() {
   const arrow = (
@@ -20,21 +22,32 @@ export default function ProjectCardNoImage() {
       />
     </svg>
   );
-  const [projectHover, setProjectHover] = useState(false)
+  const [projectHover, setProjectHover] = useState(false);
 
   const projectHoverStyle = {
-    backgroundColor : projectHover ? "#feca0f" : "transparent",
-    boxShadow : projectHover ? "5px 5px 5px #334b35" : "none"
-  }
+    backgroundColor: projectHover ? "#feca0f" : "transparent",
+    // boxShadow: projectHover ? "5px 5px 5px #334b35" : "none",
+  };
 
   const handleSetProjectHover = (status) => {
-    setProjectHover(status)
-  }
-
-
+    setProjectHover(status);
+  };
 
   return (
-    <div style={projectHoverStyle} className={classes["project-container"]} onMouseOver={() => {handleSetProjectHover(true)}} onMouseOut={() => {handleSetProjectHover(false)}}>
+    <motion.div
+      className={classes["project-container"]}
+      style={projectHoverStyle}
+      whileHover={{
+        scale: 1.03,
+        transition: { duration: 0.3 },
+      }}
+      onMouseOver={() => {
+        handleSetProjectHover(true);
+      }}
+      onMouseOut={() => {
+        handleSetProjectHover(false);
+      }}
+    >
       <div className={classes["project-desc"]}>
         <h1>
           Serverless Resume
@@ -51,6 +64,6 @@ export default function ProjectCardNoImage() {
         </h1>
         <ul> {arrow}</ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
