@@ -9,20 +9,11 @@ import {
 import classes from "./hero.module.css";
 import { useEffect, useRef, useState } from "react";
 import HeroTimeline from "../ui-elements/hero-timeline";
+import calcScreenSize from "@/utilities/calc-screensize";
 export default function Hero(props) {
   const [isWideScreen, SetIsWideScreen] = useState(false);
-  useEffect(() => {
-    const checkScreenwidth = () => {
-      const screenWidth = window.innerWidth;
-      const thresholdWidth = 1024;
-      SetIsWideScreen(screenWidth >= thresholdWidth);
-    };
-    checkScreenwidth();
-    window.addEventListener("resize", checkScreenwidth); // call checkscreen width everytime the window is reszized
-    return () => {
-      window.removeEventListener("resize", checkScreenwidth); //cleanup removes the event listtener added to ensure listner is no longer active
-    };
-  }, []);
+  calcScreenSize(SetIsWideScreen)
+
   const [timelinePoint, setTimelinePoint] = useState({
     point1: false,
     point2: false,

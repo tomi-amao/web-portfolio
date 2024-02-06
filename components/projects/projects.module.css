@@ -86,7 +86,7 @@
   display: flex;
   height: 10rem;
   background-color: #fefefb;
-  border: 1px solid #334b35;
+  /* border: 1px solid #334b35; */
   width: 100%;
   margin-bottom: 0.5em;
 }
@@ -96,7 +96,7 @@
   display: flex;
   height: 10rem;
   background-color: #fefefb;
-  border: 1px solid #334b35;
+  /* border: 1px solid #334b35; */
   width: 100%;
   margin-bottom: 0.5em;
 }
@@ -152,7 +152,7 @@
     display: flex;
     height: 10rem;
     background-color: #fefefb;
-    border: 1px solid #334b35;
+    /* border: 1px solid #334b35; */
     width: 100%;
     margin-bottom: 0.5em;
   }
@@ -163,7 +163,7 @@
     display: flex;
     height: 20rem;
     background-color: #fefefb;
-    border: 1px solid #334b35;
+    /* border: 1px solid #334b35; */
     width: 100%;
     margin-bottom: 0.5em;
   }
@@ -184,6 +184,7 @@
   .page-title {
     padding-left: 4em;
     padding-bottom: 1.5em;
+    font-size: 4rem;
   }
 
 

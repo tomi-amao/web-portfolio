@@ -176,7 +176,7 @@ export default function AboutMe() {
   };
 
   const viewScrollAnimations = {
-    whileInView: { opacity: [0, 0.25, 0.5, 0.75, 1], y: 25 },
+    whileInView: { opacity: [0, 0.5, 1], y: 25 },
     initial: { opacity: 0, y: -15 },
     transition: { delay: 0, duration: 1, type: "tween" },
   };
@@ -186,6 +186,7 @@ export default function AboutMe() {
     initial: { opacity: 0, y: -15 },
     transition: { delay: 2, duration: 1, type: "tween" },
   };
+  
 
   return (
     <>
@@ -194,7 +195,7 @@ export default function AboutMe() {
         variants={viewScrollAnimations}
         initial="initial"
         whileInView="whileInView"
-        viewport={{ amount: "all" }}
+        viewport={{ amount: "all", once: true }}
         transition="transition"
       >
         {" "}
@@ -203,7 +204,14 @@ export default function AboutMe() {
 
       <div className={classes["grid-image"]}>
         <div className={classes["container-image"]}>
-          <div className={classes["container-image-border"]}>
+          <motion.div
+            className={classes["container-image-border"]}
+            variants={viewScrollAnimations}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 10 }}
+            viewport={{ amount: "all", margin: "300px", once: true}}
+            transition={{ delay: 0, duration: 1.5, type: "tween" }}
+          >
             <Image
               src={headshot}
               width={430}
@@ -213,14 +221,14 @@ export default function AboutMe() {
             <div className={classes["container-image-desc-border"]}>
               <h2 className={classes["container-image-desc"]}> {desc} </h2>
             </div>
-          </div>
+          </motion.div>
         </div>
         <motion.div className={classes["trait-large"]}>
           <motion.li
             variants={traitsContainerAnimations}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ amount: "all", margin: "-100px" }}
+            viewport={{ amount: "all", margin: "-50px" }}
             transition="transition"
             onClick={() => {
               handleShowAllTraits("fitness");
@@ -239,7 +247,7 @@ export default function AboutMe() {
             variants={traitsContainerAnimations}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ amount: "all", margin: "-100px" }}
+            viewport={{ amount: "all", margin: "-50px" }}
             transition="transition"
             onClick={() => {
               handleShowAllTraits("resilient");
@@ -258,7 +266,7 @@ export default function AboutMe() {
             variants={traitsContainerAnimations}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ amount: "all", margin: "-100px" }}
+            viewport={{ amount: "all", margin: "-50px" }}
             transition="transition"
             onClick={() => {
               handleShowAllTraits("volunteer");
@@ -278,7 +286,7 @@ export default function AboutMe() {
             variants={traitsContainerAnimations}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ amount: "all", margin: "-100px" }}
+            viewport={{ amount: "all", margin: "-50px" }}
             transition="transition"
             onClick={() => {
               handleShowAllTraits("learner");
@@ -294,18 +302,46 @@ export default function AboutMe() {
 
             <p>avid learner</p>
           </motion.li>
-          <li style={fitnessVisibility}>
+          <motion.li
+            style={fitnessVisibility}
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-50px" }}
+            transition="transition"
+          >
             <p> {fitness} </p>
-          </li>
-          <li style={resilientVisibility}>
+          </motion.li>
+          <motion.li
+            style={resilientVisibility}
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-50px" }}
+            transition="transition"
+          >
             <p> {resilient} </p>
-          </li>
-          <li style={volunteerVisibility}>
+          </motion.li>
+          <motion.li
+            style={volunteerVisibility}
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-50px" }}
+            transition="transition"
+          >
             <p> {volunteer} </p>
-          </li>
-          <li style={learnerVisibility}>
+          </motion.li>
+          <motion.li
+            style={learnerVisibility}
+            variants={traitsContainerAnimations}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ amount: "all", margin: "-50px" }}
+            transition="transition"
+          >
             <p> {learner} </p>
-          </li>
+          </motion.li>
         </motion.div>
       </div>
       <div className={classes["grid-desc"]}></div>
