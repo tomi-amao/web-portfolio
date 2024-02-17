@@ -7,14 +7,14 @@ const karantina = Karantina({
   weight: "400",
 
   subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-karantina'
-})
+  display: "swap",
+  variable: "--font-karantina",
+});
 const lato = Lato({
   weight: "400",
   subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-lato'
+  display: "swap",
+  variable: "--font-lato",
 });
 
 export const metadata = {
@@ -25,7 +25,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${lato.variable} ${karantina.variable}`}>{children}</body>
+      <body className={`${lato.variable} ${karantina.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
