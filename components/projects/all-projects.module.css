@@ -1,11 +1,8 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); 
-  grid-template-rows: repeat(2, auto); 
-  gap: 0.5rem; 
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 0.5rem;
 
   padding: 2rem;
   align-items: start;
@@ -19,11 +16,8 @@
   font-size: 18px;
 }
 
-.grid-item-title {
-  display: flex;
-  position: relative;
-  top: 2rem;
-  font-size: 5rem;
-  line-height: 1;
+.page-title {
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+  font-size: 4rem;
 }
-

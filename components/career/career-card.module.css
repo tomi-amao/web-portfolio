@@ -4,10 +4,11 @@
   grid-template-columns: 1fr;
 
   gap: 0.1rem;
-  border: 2px solid #334b35;
-  border-radius: 10px;
+  border: 1.5px solid #334b35;
+  border-radius: 5px;
   background-color: #fefefb;
   box-shadow: 20%;
+  height: 380px;
 }
 
 .career-title {

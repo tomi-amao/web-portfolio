@@ -5,17 +5,16 @@ export default function CareerCard() {
     <>
       <div className={classes["career-container"]}>
         <div className={classes["career-title"]}>
-          {" "}
-          <h1>
-            Company{" "}
+          <h2>
+            Company
             <p>
               IntoUniversity is a charity dedicated to helping disadvantaged
               young people enter university
             </p>
-          </h1>
+          </h2>
         </div>
         <div className={classes["career-desc"]}>
-          <h1>
+          <h2>
             Work Done
             <ul>
               <li>
@@ -31,7 +30,7 @@ export default function CareerCard() {
                 disturbances in the local area
               </li>
             </ul>
-          </h1>
+          </h2>
         </div>
         <div className={classes["career-skills"]}>
           <p>Skill Developed</p>
