@@ -49,7 +49,7 @@ export default function ProjectCardNoImage() {
       }}
     >
       <div className={classes["project-desc"]}>
-        <h1>
+        <h2>
           Serverless Resume
           <p>
             My resume hosted on AWS using serverless tools such as DynamoDB,
@@ -61,7 +61,7 @@ export default function ProjectCardNoImage() {
             <li> JavaScript </li>
             <li> Terrafrom </li>
           </ul>
-        </h1>
+        </h2>
         <ul> {arrow}</ul>
       </div>
     </motion.div>

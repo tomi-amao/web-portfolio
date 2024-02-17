@@ -33,7 +33,7 @@ export default function Projects() {
           variants={viewScrollAnimations}
           initial="initial"
           whileInView="whileInView"
-          viewport={{ amount: "all" }}
+          viewport={{ amount: "all", once: true }}
           transition="transition"
         >
           Projects

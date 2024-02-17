@@ -1,0 +1,264 @@
+
+
+
+.section-bg {
+  position: relative;
+  height: 400vh;
+  /* background-color: #F5EFE1 */
+  margin-top: 100px;
+}
+
+
+.left-box{
+  /* background-color: aliceblue; */
+  width: 500px;
+  height: 75vh;
+  margin: 0 auto;
+  overflow: hidden;
+
+
+}
+
+.card {
+  /* background-color: rgb(27, 99, 162); */
+  width: 200px;
+  height: 300px;
+  margin-top: 100px;
+  margin-left: 20px;
+
+}
+
+/* point1 style  */
+.timeline-point-1{
+	width: 15px;
+	height: 15px;
+	background: #feca0f;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+  border-radius: 50%;
+  grid-row: 1;
+  display: grid;
+  justify-content: center;
+  margin-left: -0.4em;
+  margin-top: 40px;
+}
+
+.pointdesc-education {
+  margin-left: 2em;
+  margin-top: -0.4em;
+}
+.education-x {
+  position: absolute;
+  width: 300px;
+  margin-top: 2px;
+}
+
+/* point2 style */
+
+.timeline-point-2{
+	width: 20px;
+	height: 20px;
+	background: #F25C33;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+  border-radius: 50%;
+  grid-row: 1;
+  margin-top: 2em;
+  margin-left: -0.5em;
+  cursor: pointer;
+
+}
+
+.pointdesc-career {
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  margin-left: 2em;
+}
+
+.career-x {
+  width: 200px;
+  margin-top: -0.2em;
+
+}
+
+.card-1 {
+  width: 1500%;
+}
+
+/* point3 style  */
+
+.timeline-point-3{
+	width: 15px;
+	height: 15px;
+	background: #feca0f;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+  border-radius: 50%;
+  grid-row: 1;
+  margin-top: 26em;
+  margin-left: -0.4em;
+
+}
+
+/* point4 style  */
+.timeline-point-4{
+	width: 15px;
+	height: 15px;
+	background: #feca0f;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+  border-radius: 50%;
+  grid-row: 1;
+  margin-top: 3em;
+  margin-left: -0.4em;
+}
+
+.pointdesc-education-2 {
+  margin-left: 2em;
+  margin-top: -0.4em;
+
+
+}
+
+.education-x-2 {
+  width: 200px;
+  position: absolute;
+  width: 300px;
+}
+
+/* point5 style  */
+.timeline-point-5{
+	width: 20px;
+	height: 20px;
+	background: #F25C33;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+  border-radius: 50%;
+  grid-row: 1;
+  margin-top: 3em;
+  margin-left: -0.5em;
+  cursor: pointer;
+
+}
+
+.career-x-2 {
+  width: 200px;
+  margin-top: -0.2em;
+
+}
+
+/* point6 style  */
+.timeline-point-6{
+	width: 15px;
+	height: 15px;
+	background: #feca0f;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+  border-radius: 50%;
+  grid-row: 1;
+  margin-top: 25em;
+  margin-left: -0.4em;
+
+}
+
+.pointdesc-education-3 {
+  display: block;
+  margin-top: -1em;
+  font-size: 0.875em;
+  margin-left: 0;
+
+
+}
+
+.education-x-3 {
+  width: 300px;
+  list-style: none;
+  margin-left: 1.8em;
+}
+
+/* point7 style  */
+
+.timeline-point-7{
+	width: 20px;
+	height: 20px;
+	background: #F25C33;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+  border-radius: 50%;
+  grid-row: 1;
+  margin-top: 3em;
+  margin-left: -0.5em;
+  cursor: pointer;
+
+
+}
+
+
+/* timeline style  */
+
+.vertical-line {
+  display: flex;
+  flex-direction: column;
+  width: 3px;
+  height: 260%;
+  background-color: #f25c33;
+  grid-row: 1;
+  border-radius: 10px;
+  margin-left: 5em;
+  position: sticky;
+}
+
+/* RIGHT BOX */
+
+.right-box{
+
+  /* background-color: antiquewhite; */
+  width: 400px;
+  height: fit-content;
+  padding-bottom: 10rem;
+  margin: 0 auto;
+}
+
+/* image styling  */
+
+.container-image {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container-image-border {
+  display: grid;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .container-image {
+    width: 100%;
+  }
+
+  .card-1 {
+    width: 2170%;
+  }
+
+  .right-box{
+
+    /* background-color: antiquewhite; */
+    width: 500px;
+    height: 75vh;
+    margin: 0 auto;
+  }
+}
+

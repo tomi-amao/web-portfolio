@@ -11,7 +11,7 @@ export default function Contact() {
     <>
       <div className={classes["grid-container"]}>
         <div className={classes["grid-item-info"]}>
-          <h2>Let's Connect</h2>
+          <h1 style={{fontSize: "6rem"}}>Let's Connect</h1>
           <h3>
             Drop me a message and say hello, feedback is also very much
             appreciated.

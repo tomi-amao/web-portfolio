@@ -70,50 +70,7 @@ export default function Career() {
     }
   };
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    //depening on screen size, use different scroll position values
-    if (isWideScreen) {
-      if (latest > 2780) {
-        setShowCard((preValue) => ({
-          ...preValue,
-          point1: true,
-        }));
-      }
-      if (latest > 2880) {
-        setShowCard((preValue) => ({
-          ...preValue,
-          point2: true,
-        }));
-      }
-      if (latest > 2980) {
-        setShowCard((preValue) => ({
-          ...preValue,
-          point3: true,
-        }));
-      }
-    } else if (!isWideScreen) {
-      if (latest > 3700) {
-        setShowCard((preValue) => ({
-          ...preValue,
-          point1: true,
-        }));
-      }
-      if (latest > 4250) {
-        setShowCard((preValue) => ({
-          ...preValue,
-          point2: true,
-        }));
-      }
-      if (latest > 4750) {
-        setShowCard((preValue) => ({
-          ...preValue,
-          point3: true,
-        }));
-      }
-
-      console.log("Page scroll: ", latest);
-    }
-  });
+  
 
   // styles to show the respecive career card, using ternary that determining truthy and falsey values
   const showCardStyle1 = {

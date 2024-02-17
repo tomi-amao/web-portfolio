@@ -8,13 +8,13 @@ export default function MainNavigation() {
           <div className={classes.dot}></div>
         </div>
 
-        <nav className={classes.nav}>
+        {/* <nav className={classes.nav}>
           <ul className={classes["nav-list"]}>
             <li> home </li>
             <li> blog </li>
             <li> contact</li>
           </ul>
-        </nav>
+        </nav> */}
       </header>
     </>
   );

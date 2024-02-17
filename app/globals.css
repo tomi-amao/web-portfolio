@@ -4,4 +4,15 @@
 
 body {
   background: #f5efe1;
+  font-family: var(--font-lato);
+
+}
+
+html {
+  font-family: var(--font-lato);
+}
+h1 {
+  font-family: var(--font-karantina);
+  color: #334b35;
+  letter-spacing: 1px;
 }
