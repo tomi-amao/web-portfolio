@@ -31,6 +31,36 @@ jobs:
           one_of: major,minor,patch,feature
           repo_token: ${{ secrets.GITHUB_TOKEN }}
 
+
+  eslint:
+    name: Run eslint scanning
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install ESLint
+        run: |
+          npm install eslint@8.57.0
+          npm install @microsoft/eslint-formatter-sarif@2.1.7
+
+      - name: Run ESLint
+        run: npm run lint
+      
+
+      - name: Amend Commit 
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Action"
+          git add .
+          git commit --amend --no-edit
+          git log
+          git push -f origin
+
   prettify-code:
     needs: check-labels
     name: Prettify Code
